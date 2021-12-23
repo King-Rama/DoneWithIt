@@ -12,8 +12,8 @@ const appAlert = (title, message, rightBtn, onPressRight, leftBtn, onPressLeft, 
         { cancelable }
       )
 
+}
 
-    export default {
-        appAlert,
-    }
+export default {
+    appAlert,
 }

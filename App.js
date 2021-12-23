@@ -1,21 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import {Platform, StatusBar, StyleSheet, Text} from 'react-native';
+import Screen from "./app/components/Screen";
+import ImageInputList from "./app/components/ImageInputList";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ImageInput from "./app/components/ImageInput";
+import MessagesScreen from "./app/screens/MessagesScreen";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import LoginScreen from "./app/screens/LoginScreen";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+
+const Tweets = () => {
+    return (
+        <Screen>
+            <Text>Tweets</Text>
+        </Screen>
+    );
+};
+
+const TweetDetails = () => {
+    return (
+        <Screen>
+            <Text>Tweet Details</Text>
+        </Screen>
+    );
+};
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+    <Stack.Navigator>
+        <Stack.Screen name="Tweets" component={Tweets} />
+        <Stack.Screen name="TweetDetails" component={TweetDetails} />
+    </Stack.Navigator>
+);
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+
+    return (
+        // <Screen>
+        //     {/*<ImageInputList*/}
+        //     {/*    imageUris={imageUris}*/}
+        //     {/*    onAddImage={handleAdd}*/}
+        //     {/*    onRemoveImage={handleRemove}*/}
+        //     {/*/>*/}
+        // </Screen>
+        // <ListingEditScreen />
+       <NavigationContainer>
+           <StackNavigator />
+       </NavigationContainer>
+
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    },
 });
+

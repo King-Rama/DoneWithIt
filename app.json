@@ -2,12 +2,13 @@
   "expo": {
     "name": "DoneWithIt",
     "slug": "DoneWithIt",
+    "privacy": "unlisted",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
       "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -17,9 +18,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.expo.ramawakili.DoneWithIt",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.expo.ramawakili.DoneWithIt",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -28,6 +33,9 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "a market place for things you dont want anymore"
+    "description": "a market place for things you dont want anymore",
+    "notification": {
+      "iosDisplayInForeground": true
+    }
   }
 }

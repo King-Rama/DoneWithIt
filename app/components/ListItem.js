@@ -6,6 +6,7 @@ import AppText from "./AppText";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 
+
 function ListItem({title, subtitle, image, iconComponent, onPress, renderRightActions}) {
     return (
         <Swipeable renderRightActions={renderRightActions}>
@@ -14,7 +15,7 @@ function ListItem({title, subtitle, image, iconComponent, onPress, renderRightAc
                 underlayColor={colors.light}>
                     <View style={styles.container}>
                         { iconComponent && (<View >{iconComponent}</View>) }
-                        { image && (<Image source={{uri: image}} style={styles.image} />) }
+                        { image && (<Image source={image} style={styles.image} />) }
                         <View style={styles.textContainer}>
                             {title && (<AppText style={styles.title}>{title}</AppText>) }
                             {subtitle && (<AppText style={styles.subtitle}>{subtitle}</AppText>) }
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70,
         borderRadius: 70 / 2,
+        marginRight: 10,
     },
     title: {
         fontWeight: '500',
@@ -48,8 +50,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textContainer: {
-        flex: 1,
-        justifyContent: 'center',
+        flexGrow: 1,
         marginLeft: 10,
     },
 });
